@@ -1,7 +1,7 @@
 //import * as Joi from "/home/ubuntu/MQTT_NodeJS/node_modules/dynamodb/node_modules/joi"
 const Joi = require('joi');
 var dynamo = require('dynamodb');
-dynamo.AWS.config.loadFromPath('/home/ubuntu/MQTT_NodeJS/node_modules/aws-sdk/lib/credentials.json');
+dynamo.AWS.config.loadFromPath('credentials.json');
 dynamo.AWS.config.update({region: "us-west-2"});
 var Account = dynamo.define('Account', {
   hashKey : 'email',
@@ -26,6 +26,15 @@ dynamo.createTables(function(err) {
     console.log('Error creating tables: ', err);
   } else {
     console.log('Tables has been created');
+  }
+});
+
+var acc = new Account({email: 'test@example.com', name: 'Test Example', age: 22});
+acc.save(function (err) {
+  if( err ) {
+    console.log('error in saving account', err);
+  } else {
+    console.log('created account in DynamoDB', acc.get('email'));
   }
 });
 
