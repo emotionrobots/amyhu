@@ -26,6 +26,14 @@ function onMessageReceived(topic, message)
   try {
     const js = JSON.parse(message);
     //console.log(js.device);
+    var pc1 = new PCEntry({deviceid: js.deviceid, device: js.device, longitude: js.longitude, latitude: js.latitude, location: js.location, time: js.time, enter: js.enter, exit: js.exit, peopleinbuilding: js.peopleinbuilding,});
+    pc1.save(function (err) {
+     if( err ) {
+      console.log('error in saving entry', err);
+      } else {
+      console.log('created entry in DynamoDB', pc1.get('deviceid'));
+     }
+    });
     console.log(message.toString());
     //console.log("Device="+js['device']);
 
@@ -70,7 +78,7 @@ dynamo.createTables(function(err) {
     console.log('Tables has been created');
   }
 });
-
+/*
 var pc1 = new PCEntry({deviceid: 12, device: 'rpiz', longitude: 22, latitude: 24, location: 'School', time: '12:13', enter: 5, exit: 1, peopleinbuilding: 4,});
 pc1.save(function (err) {
   if( err ) {
@@ -88,3 +96,4 @@ pc2.save(function (err) {
     console.log('created entry in DynamoDB', pc2.get('deviceid'));
   }
 });
+*/
