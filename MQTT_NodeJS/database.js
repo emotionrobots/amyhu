@@ -28,7 +28,7 @@ dynamo.createTables(function(err) {
     console.log('Tables has been created');
   }
 });
-
+/*
 var acc = new Account({email: 'test@example.com', name: 'Test Example', age: 22});
 acc.save(function (err) {
   if( err ) {
@@ -37,4 +37,15 @@ acc.save(function (err) {
     console.log('created account in DynamoDB', acc.get('email'));
   }
 });
+*/
+async function asyncCall() {
+try {
+  var acc = new Account({email: 'test@example.com', name: 'Test Example'});
+  await acc.save();
+  console.log('created account in DynamoDB', acc.get('email'))
+} catch( err ) {
+  console.log('error in saving account', err);
+}
+}
 
+asyncCall();
