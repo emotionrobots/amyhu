@@ -1,4 +1,4 @@
-//import * as Joi from "/home/ubuntu/MQTT_NodeJS/node_modules/dynamodb/node_modules/joi"
+//Use this one
 const Joi = require('joi');
 var dynamo = require('dynamodb');
 dynamo.AWS.config.loadFromPath('credentials.json');
