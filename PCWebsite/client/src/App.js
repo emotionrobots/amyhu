@@ -15,9 +15,18 @@ class App extends Component {
             .catch(err => err);
     }
 
+    callDynamo() {
+        fetch("http://localhost:9000/testdynamo")
+            .then(res => res.text())
+            .then(res => this.setState({ dynamoResponse: res }))
+            .catch(err => err);
+    }
+
     componentDidMount() {
         this.callAPI();
+        this.callDynamo();
     }
+
 
     render() {
         return (
@@ -27,6 +36,7 @@ class App extends Component {
                     <h1 className="App-title">Welcome to React</h1>
                 </header>
                 <p className="App-intro">{this.state.apiResponse}</p>
+                <p className="App-intro1">{this.state.dynamoResponse}</p>
             </div>
         );
     }
