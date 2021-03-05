@@ -2,15 +2,31 @@ var express = require("express");
 var router = express.Router();
 
 var AWS = require('aws-sdk');
-var dynamo = require('dynamodb');
-dynamo.AWS.config.loadFromPath('credentials.json');
-dynamo.AWS.config.update({region: "us-west-2"});
+AWS.config.loadFromPath('credentials.json');
+AWS.config.update({region: "us-west-2"});
 
-const client = new AWS.DynamoDB.DocumentClient();
-const tableName = 'pcentrys';
+const tableName = "pcentrys"
+var dynamodb = new AWS.DynamoDB({apiVersion: '2012-08-10'});
+var docClient = new AWS.DynamoDB.DocumentClient();
 
 router.get("/", function(req, res, next) {
-    res.send("API is working properly with DynamoDB");
+    var params = {
+        TableName: tableName
+    };
+
+    docClient.scan(params, (err, data) => {
+        if (err) {
+            console.log(err);
+        } else {
+            var items = [];
+            for (var i in data.Items)
+                items.push(data.Items[i]);
+                //items.push(data.Items[i]['device']);
+
+            res.contentType = 'application/json';
+            res.send(items);
+        }
+    });
 });
 
 module.exports = router;
