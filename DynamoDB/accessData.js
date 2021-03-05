@@ -1,4 +1,4 @@
-// Load the AWS SDK for JS
+// Load the AWS SDK
 var AWS = require("aws-sdk");
 
 // Set a region to interact with (make sure it's the same as the region of your table)
