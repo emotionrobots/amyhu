@@ -8,23 +8,37 @@ import Card from './components/Card/Card'
 import CardHeader from './components/Card/CardHeader'
 import CardBody from './components/Card/CardBody'
 import CardText from "components/Card/CardText.js";
+//const { useState } = React;
 const ppl = 10
 
 const App = () => {
-  const [contacts, setContacts] = useState([]);
+  const [pc, setPc] = useState([]);
 
   useEffect(() => {
-    fetch("https://randomuser.me/api/?results=3")
+    fetch("http://localhost:9000/testdynamo")
       .then(response => response.json())
       .then(data => {
-        setContacts(data.results);
+        console.log(data);
+        setPc(data.results);
+        console.log(pc);
       });
   }, []);
+
+  //console.log(this.state.pc.length);
   
   return (
     <>
     <Heading title="People Counter Report" textAlign="center" />
       <GridContainer>
+        <GridItem xs={120}>
+        <Card>
+            <CardHeader color="info" text>
+              <CardText color="info">
+                <h3>Name of the Building: School</h3>
+              </CardText>
+            </CardHeader>
+          </Card>
+        </GridItem>
         <GridItem xs={120}>
         <Card>
             <CardHeader color="warning" text>
