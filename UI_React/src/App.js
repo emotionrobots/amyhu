@@ -20,11 +20,11 @@ const App = () => {
       .then(data => {
         console.log(data);
         setPc(data.results);
-        console.log(pc);
+        //console.log(pc);
       });
-  }, []);
+  }, [pc]);
 
-  //console.log(this.state.pc.length);
+  console.log(pc.length);
   
   return (
     <>
