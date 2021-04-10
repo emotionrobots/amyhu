@@ -20,7 +20,6 @@ const App = () => {
       .then(response => response.json())
       .then(data => {
         console.log(data);
-<<<<<<< HEAD
         setPc(data);
         //console.log("USE EFFECT: " + pc.length);
       });
@@ -30,14 +29,6 @@ const App = () => {
   /*, function() {
           console.log("TRY" + pc.length);
         }*/
-=======
-        setPc(data.results);
-        //console.log(pc);
-      });
-  }, [pc]);
-
-  console.log(pc.length);
->>>>>>> ef564c6375cf378b734d24a42f3f1a146ed8d9a5
   
   return (
     <>
