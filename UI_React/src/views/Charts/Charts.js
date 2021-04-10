@@ -39,7 +39,7 @@ export default function Charts() {
   return (
     <div>
       <GridContainer>
-        <GridItem xs={12} sm={12} md={60}>
+        <GridItem xs={12} sm={12} md={12}>
           <Card>
             <CardHeader color="rose" icon>
               <CardIcon color="rose">

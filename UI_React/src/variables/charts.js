@@ -15,6 +15,9 @@ var delays = 80,
   durations = 500;
 var delays2 = 80,
   durations2 = 500;
+var monday = 0;
+
+
 
 // ##############################
 // // // Daily Sales
@@ -195,7 +198,7 @@ const completedTasksChart = {
 const roundedLineChart = {
   data: {
     labels: ["M", "T", "W", "T", "F", "S", "S"],
-    series: [[12, 17, 7, 17, 23, 18, 38]]
+    series: [[monday, 17, 7, 17, 23, 18, 38]]
   },
   options: {
     lineSmooth: Chartist.Interpolation.cardinal({

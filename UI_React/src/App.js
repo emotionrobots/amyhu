@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect} from 'react';
 import "./styles.css"
 import Heading from "components/Heading/Heading.js";
 import GridContainer from "components/Grid/GridContainer.js";
@@ -12,6 +12,7 @@ import CardText from "components/Card/CardText.js";
 const ppl = 10
 
 const App = () => {
+ 
   const [pc, setPc] = useState([]);
 
   useEffect(() => {
@@ -19,18 +20,22 @@ const App = () => {
       .then(response => response.json())
       .then(data => {
         console.log(data);
-        setPc(data.results);
-        console.log(pc);
+        setPc(data);
+        //console.log("USE EFFECT: " + pc.length);
       });
   }, []);
-
-  //console.log(this.state.pc.length);
+  
+  //console.log('OUTSIDE = ' + pc.length);
+  /*, function() {
+          console.log("TRY" + pc.length);
+        }*/
   
   return (
     <>
+    <div>{console.log("pc.length " + pc.length)}</div>
     <Heading title="People Counter Report" textAlign="center" />
       <GridContainer>
-        <GridItem xs={120}>
+        <GridItem xs={12} sm={12} md={4}>
         <Card>
             <CardHeader color="info" text>
               <CardText color="info">
@@ -39,7 +44,7 @@ const App = () => {
             </CardHeader>
           </Card>
         </GridItem>
-        <GridItem xs={120}>
+        <GridItem xs={12} sm={12} md={6}>
         <Card>
             <CardHeader color="warning" text>
               <CardText color="warning">
@@ -50,6 +55,7 @@ const App = () => {
         </GridItem>
       </GridContainer>
     <Charts/>
+    {/*console.log(pc.length)*/}
     </>
   );
 }
