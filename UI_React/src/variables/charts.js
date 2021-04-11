@@ -1,3 +1,4 @@
+//import React, { useState, useEffect} from 'react';
 // ##############################
 // // // javascript library for creating charts
 // #############################
@@ -16,8 +17,6 @@ var delays = 80,
 var delays2 = 80,
   durations2 = 500;
 var monday = 0;
-
-
 
 // ##############################
 // // // Daily Sales
