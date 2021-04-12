@@ -149,8 +149,166 @@ export default function Charts() {
       sunday = 0;
   }
   //////////////Preparing Data for the Month of the Year Chart////////////////////
+  var d = new Date();
+  var m = d.getMonth();
+  m=m+1;
+  for(var i=pc.length-1; i>=0; i--)
+  {
+    if(m>=1)
+    {
+      if((pc[i].datetime).localeCompare("January")==0)
+     {
+       jan = pc[i].enter;
+       break;
+      }
+    } 
+    else
+      jan = 0;
+  }
+  for(var i=pc.length-1; i>=0; i--)
+  {
+    if(m>=2)
+    {
+      if((pc[i].datetime).localeCompare("February")==0)
+     {
+       feb = pc[i].enter;
+       break;
+      }
+    } 
+    else
+      feb = 0;
+  }
+  for(var i=pc.length-1; i>=0; i--)
+  {
+    if(m>=3)
+    {
+      if((pc[i].datetime).localeCompare("March")==0)
+     {
+       mar = pc[i].enter;
+       break;
+      }
+    } 
+    else
+      mar = 0;
+  }
+  for(var i=pc.length-1; i>=0; i--)
+  {
+    if(m>=4)
+    {
+      if((pc[i].datetime).localeCompare("April")==0)
+     {
+       apr = pc[i].enter;
+       break;
+      }
+    } 
+    else
+      apr = 0;
+  }
+  for(var i=pc.length-1; i>=0; i--)
+  {
+    if(m>=5)
+    {
+      if((pc[i].datetime).localeCompare("May")==0)
+     {
+       may = pc[i].enter;
+       break;
+      }
+    } 
+    else
+      may = 0;
+  }
+  for(var i=pc.length-1; i>=0; i--)
+  {
+    if(m>=6)
+    {
+      if((pc[i].datetime).localeCompare("June")==0)
+     {
+       jun = pc[i].enter;
+       break;
+      }
+    } 
+    else
+      jun = 0;
+  }
+  for(var i=pc.length-1; i>=0; i--)
+  {
+    if(m>=7)
+    {
+      if((pc[i].datetime).localeCompare("July")==0)
+     {
+       jul = pc[i].enter;
+       break;
+      }
+    } 
+    else
+      jul = 0;
+  }
+  for(var i=pc.length-1; i>=0; i--)
+  {
+    if(m>=8)
+    {
+      if((pc[i].datetime).localeCompare("August")==0)
+     {
+       aug = pc[i].enter;
+       break;
+      }
+    } 
+    else
+      aug = 0;
+  }
+  for(var i=pc.length-1; i>=0; i--)
+  {
+    if(m>=9)
+    {
+      if((pc[i].datetime).localeCompare("September")==0)
+     {
+       sep = pc[i].enter;
+       break;
+      }
+    } 
+    else
+      sep = 0;
+  }
+  for(var i=pc.length-1; i>=0; i--)
+  {
+    if(m>=10)
+    {
+      if((pc[i].datetime).localeCompare("October")==0)
+     {
+       oct = pc[i].enter;
+       break;
+      }
+    } 
+    else
+      oct = 0;
+  }
+  for(var i=pc.length-1; i>=0; i--)
+  {
+    if(m>=11)
+    {
+      if((pc[i].datetime).localeCompare("November")==0)
+     {
+       nov = pc[i].enter;
+       break;
+      }
+    } 
+    else
+      nov = 0;
+  }
+  for(var i=pc.length-1; i>=0; i--)
+  {
+    if(m>=12)
+    {
+      if((pc[i].datetime).localeCompare("December")==0)
+     {
+       dec = pc[i].enter;
+       break;
+      }
+    } 
+    else
+      dec = 0;
+  }
 
-  
   return (
     <div>
       <GridContainer>
@@ -207,7 +365,23 @@ export default function Charts() {
             <CardHeader color="info">
               <ChartistGraph
                 className="ct-chart-white-colors"
-                data={simpleBarChart.data}
+                data={{
+                  labels: [
+                    "Jan",
+                    "Feb",
+                    "Mar",
+                    "Apr",
+                    "Mai",
+                    "Jun",
+                    "Jul",
+                    "Aug",
+                    "Sep",
+                    "Oct",
+                    "Nov",
+                    "Dec"
+                  ],
+                  series: [[jan, feb, mar, apr, may, jun, jul, aug, sep, oct, nov, dec]]
+                }}
                 type="Bar"
                 options={simpleBarChart.options}
                 responsiveOptions={simpleBarChart.responsiveOptions}
