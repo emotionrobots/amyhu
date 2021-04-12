@@ -34,7 +34,8 @@ import styles from "assets/jss/material-dashboard-pro-react/views/chartsStyle.js
 
 const useStyles = makeStyles(styles);
 
-var h7,h8,h9,h10,h11,h12,h13,h14,h15,h16,h17,h18,h19,h20,h21,h22,h23=0;
+var enh7,enh8,enh9,enh10,enh11,enh12,enh13,enh14,enh15,enh16,enh17,enh18,enh19,enh20,enh21,enh22=0;
+var exh7,exh8,exh9,exh10,exh11,exh12,exh13,exh14,exh15,exh16,exh17,exh18,exh19,exh20,exh21,exh22=0;
 var monday = 0, tuesday = 0, wednesday = 0, thursday = 0, friday = 0, saturday = 0, sunday = 0;
 var jan=0, feb=0, mar=0, apr=0, may=0, jun=0, jul=0, aug=0, sep=0, oct=0, nov=0, dec=0;
 // && (pc[i].time).localeCompare("9")==0 
@@ -52,11 +53,43 @@ export default function Charts() {
         //console.log("USE EFFECT: " + pc.length);
       });
   }, []);
+
+  //////////////////Preparing Data for the Hour Chart////////////////////
+  var date = new Date();
+  var h = date.getHours();
+  if(h==0)
+    h = 24;
+  /*for(var i=pc.length-1; i>=0; i--)
+  {
+    if(h>7)
+    {
+      if(pc[i].time==8)
+     {
+       enh7 = pc[i].enter;  //SumIn@8-0 (SumIn@7)
+       break;
+      }
+    } 
+    else
+      {enh7 = 0;break;}
+  for(var i=pc.length-1; i>=0; i--)
+  {
+    if(h>8)
+    {
+      if(pc[i].time==9)
+     {
+       enh8 = pc[i].enter-pc[i-1].enter;  //SumIn@9-SumIn@8
+       break;
+      }
+    } 
+    else
+      {enh8 = 0;break;}
+  }*/
+  
+  //////////////////Preparing Data for the WeekDay Chart////////////////////
   var dateObj = new Date();
   var weekdayNumber = dateObj.getDay();
   if(weekdayNumber==0)
     weekdayNumber = 7;
-  //////////////////Preparing Data for the WeekDay Chart////////////////////
   for(var i=pc.length-1; i>=0; i--)
   {
     if(weekdayNumber>=1)
@@ -68,7 +101,7 @@ export default function Charts() {
       }
     } 
     else
-      monday = 0;
+      {monday = 0;break;}
   }
   for(var i=pc.length-1; i>=0; i--)
   {
@@ -81,7 +114,7 @@ export default function Charts() {
       }
     } 
     else
-      tuesday = 0;
+      {tuesday = 0;break;}
   }
   for(var i=pc.length-1; i>=0; i--)
   {
@@ -94,7 +127,7 @@ export default function Charts() {
       }
     } 
     else
-      wednesday = 0;
+      {wednesday = 0;break;}
   }
   for(var i=pc.length-1; i>=0; i--)
   {
@@ -107,7 +140,7 @@ export default function Charts() {
       }
     } 
     else
-      thursday = 0;
+      {thursday = 0;break;}
   }
   for(var i=pc.length-1; i>=0; i--)
   {
@@ -120,7 +153,7 @@ export default function Charts() {
       }
     } 
     else
-      friday = 0;
+      {friday = 0;break;}
   }
   for(var i=pc.length-1; i>=0; i--)
   {
@@ -133,7 +166,7 @@ export default function Charts() {
       }
     } 
     else
-      saturday = 0;
+      {saturday = 0;break;}
   }
   for(var i=pc.length-1; i>=0; i--)
   {
@@ -146,7 +179,7 @@ export default function Charts() {
       }
     } 
     else
-      sunday = 0;
+      {sunday = 0;break;}
   }
   //////////////Preparing Data for the Month of the Year Chart////////////////////
   var d = new Date();
@@ -163,7 +196,7 @@ export default function Charts() {
       }
     } 
     else
-      jan = 0;
+      {jan = 0;break;}
   }
   for(var i=pc.length-1; i>=0; i--)
   {
@@ -176,7 +209,7 @@ export default function Charts() {
       }
     } 
     else
-      feb = 0;
+      {feb = 0;break;}
   }
   for(var i=pc.length-1; i>=0; i--)
   {
@@ -189,7 +222,7 @@ export default function Charts() {
       }
     } 
     else
-      mar = 0;
+      {mar = 0;break;}
   }
   for(var i=pc.length-1; i>=0; i--)
   {
@@ -202,7 +235,7 @@ export default function Charts() {
       }
     } 
     else
-      apr = 0;
+      {apr = 0;break;}
   }
   for(var i=pc.length-1; i>=0; i--)
   {
@@ -215,7 +248,7 @@ export default function Charts() {
       }
     } 
     else
-      may = 0;
+      {may = 0;break;}
   }
   for(var i=pc.length-1; i>=0; i--)
   {
@@ -228,7 +261,7 @@ export default function Charts() {
       }
     } 
     else
-      jun = 0;
+      {jun = 0;break;}
   }
   for(var i=pc.length-1; i>=0; i--)
   {
@@ -241,7 +274,7 @@ export default function Charts() {
       }
     } 
     else
-      jul = 0;
+      {jul = 0;break;}
   }
   for(var i=pc.length-1; i>=0; i--)
   {
@@ -254,7 +287,7 @@ export default function Charts() {
       }
     } 
     else
-      aug = 0;
+      {aug = 0;break;}
   }
   for(var i=pc.length-1; i>=0; i--)
   {
@@ -267,7 +300,7 @@ export default function Charts() {
       }
     } 
     else
-      sep = 0;
+      {sep = 0;break;}
   }
   for(var i=pc.length-1; i>=0; i--)
   {
@@ -280,7 +313,7 @@ export default function Charts() {
       }
     } 
     else
-      oct = 0;
+      {oct = 0;break;}
   }
   for(var i=pc.length-1; i>=0; i--)
   {
@@ -293,7 +326,7 @@ export default function Charts() {
       }
     } 
     else
-      nov = 0;
+      {nov = 0;break;}
   }
   for(var i=pc.length-1; i>=0; i--)
   {
@@ -306,7 +339,7 @@ export default function Charts() {
       }
     } 
     else
-      dec = 0;
+      {dec = 0;break;}
   }
 
   return (
