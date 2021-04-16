@@ -59,31 +59,230 @@ export default function Charts() {
   var h = date.getHours();
   if(h==0)
     h = 24;
-  /*for(var i=pc.length-1; i>=0; i--)
+  for(var i=pc.length-1; i>=0; i--)
   {
     if(h>7)
     {
-      if(pc[i].time==8)
+      if(pc[i].datetime.charAt(0)=='2' && pc[i].time==8)
      {
        enh7 = pc[i].enter;  //SumIn@8-0 (SumIn@7)
+       exh7 = pc[i].exit;
        break;
       }
     } 
     else
-      {enh7 = 0;break;}
+      {enh7 = 0; exh7 = 0; break;}
+  }
   for(var i=pc.length-1; i>=0; i--)
   {
     if(h>8)
     {
-      if(pc[i].time==9)
+      if(pc[i].datetime.charAt(0)=='2' && pc[i].time==9)
      {
        enh8 = pc[i].enter-pc[i-1].enter;  //SumIn@9-SumIn@8
+       exh8 = pc[i].exit-pc[i-1].exit;
        break;
       }
     } 
     else
-      {enh8 = 0;break;}
-  }*/
+      {enh8 = 0; exh8 = 0; break;}
+  }
+  for(var i=pc.length-1; i>=0; i--)
+  {
+    if(h>9)
+    {
+      if(pc[i].datetime.charAt(0)=='2' && pc[i].time==10)
+     {
+       enh9 = pc[i].enter-pc[i-1].enter;  //SumIn@9-SumIn@8
+       exh9 = pc[i].exit-pc[i-1].exit;
+       break;
+      }
+    } 
+    else
+      {enh9 = 0;exh9=0; break;}
+  }
+  for(var i=pc.length-1; i>=0; i--)
+  {
+    if(h>10)
+    {
+      if(pc[i].datetime.charAt(0)=='2' && pc[i].time==11)
+     {
+       enh10 = pc[i].enter-pc[i-1].enter;  //SumIn@9-SumIn@8
+       exh10 = pc[i].exit-pc[i-1].exit;
+       break;
+      }
+    } 
+    else
+      {enh10 = 0;exh10=0; break;}
+  }
+  for(var i=pc.length-1; i>=0; i--)
+  {
+    if(h>11)
+    {
+      if(pc[i].datetime.charAt(0)=='2' && pc[i].time==12)
+     {
+       enh11 = pc[i].enter-pc[i-1].enter;  //SumIn@9-SumIn@8
+       exh11 = pc[i].exit-pc[i-1].exit;
+       break;
+      }
+    } 
+    else
+      {enh11 = 0;exh11=0; break;}
+  }
+  for(var i=pc.length-1; i>=0; i--)
+  {
+    if(h>12)
+    {
+      if(pc[i].datetime.charAt(0)=='2' && pc[i].time==13)
+     {
+       enh12 = pc[i].enter-pc[i-1].enter;  //SumIn@9-SumIn@8
+       exh12 = pc[i].exit-pc[i-1].exit;
+       break;
+      }
+    } 
+    else
+      {enh12 = 0;exh12=0; break;}
+  }
+  for(var i=pc.length-1; i>=0; i--)
+  {
+    if(h>13)
+    {
+      if(pc[i].datetime.charAt(0)=='2' && pc[i].time==14)
+     {
+       enh13 = pc[i].enter-pc[i-1].enter;  //SumIn@9-SumIn@8
+       exh13 = pc[i].exit-pc[i-1].exit;
+       break;
+      }
+    } 
+    else
+      {enh13 = 0;exh13=0; break;}
+  }
+  for(var i=pc.length-1; i>=0; i--)
+  {
+    if(h>14)
+    {
+      if(pc[i].datetime.charAt(0)=='2' && pc[i].time==15)
+     {
+       enh14 = pc[i].enter-pc[i-1].enter;  //SumIn@9-SumIn@8
+       exh14 = pc[i].exit-pc[i-1].exit;
+       break;
+      }
+    } 
+    else
+      {enh14 = 0;exh14=0; break;}
+  }
+  for(var i=pc.length-1; i>=0; i--)
+  {
+    if(h>15)
+    {
+      if(pc[i].datetime.charAt(0)=='2' && pc[i].time==16)
+     {
+       enh15 = pc[i].enter-pc[i-1].enter;  //SumIn@9-SumIn@8
+       exh15 = pc[i].exit-pc[i-1].exit;
+       break;
+      }
+    } 
+    else
+      {enh15 = 0;exh15=0; break;}
+  }
+  for(var i=pc.length-1; i>=0; i--)
+  {
+    if(h>16)
+    {
+      if(pc[i].datetime.charAt(0)=='2' && pc[i].time==17)
+     {
+       enh16 = pc[i].enter-pc[i-1].enter;  //SumIn@9-SumIn@8
+       exh16 = pc[i].exit-pc[i-1].exit;
+       break;
+      }
+    } 
+    else
+      {enh16 = 0;exh16=0; break;}
+  }
+  for(var i=pc.length-1; i>=0; i--)
+  {
+    if(h>17)
+    {
+      if(pc[i].datetime.charAt(0)=='2' && pc[i].time==18)
+     {
+       enh17 = pc[i].enter-pc[i-1].enter;  //SumIn@9-SumIn@8
+       exh17 = pc[i].exit-pc[i-1].exit;
+       break;
+      }
+    } 
+    else
+      {enh17 = 0;exh17=0; break;}
+  }
+  for(var i=pc.length-1; i>=0; i--)
+  {
+    if(h>18)
+    {
+      if(pc[i].datetime.charAt(0)=='2' && pc[i].time==19)
+     {
+       enh18 = pc[i].enter-pc[i-1].enter;  //SumIn@9-SumIn@8
+       exh18 = pc[i].exit-pc[i-1].exit;
+       break;
+      }
+    } 
+    else
+      {enh18 = 0;exh18=0; break;}
+  }
+  for(var i=pc.length-1; i>=0; i--)
+  {
+    if(h>19)
+    {
+      if(pc[i].datetime.charAt(0)=='2' && pc[i].time==20)
+     {
+       enh19 = pc[i].enter-pc[i-1].enter;  //SumIn@9-SumIn@8
+       exh19 = pc[i].exit-pc[i-1].exit;
+       break;
+      }
+    } 
+    else
+      {enh19 = 0;exh19=0; break;}
+  }
+  for(var i=pc.length-1; i>=0; i--)
+  {
+    if(h>20)
+    {
+      if(pc[i].datetime.charAt(0)=='2' && pc[i].time==21)
+     {
+       enh20 = pc[i].enter-pc[i-1].enter;  //SumIn@9-SumIn@8
+       exh20 = pc[i].exit-pc[i-1].exit;
+       break;
+      }
+    } 
+    else
+      {enh20 = 0;exh20=0; break;}
+  }
+  for(var i=pc.length-1; i>=0; i--)
+  {
+    if(h>21)
+    {
+      if(pc[i].datetime.charAt(0)=='2' && pc[i].time==22)
+     {
+       enh21 = pc[i].enter-pc[i-1].enter;  //SumIn@9-SumIn@8
+       exh21 = pc[i].exit-pc[i-1].exit;
+       break;
+      }
+    } 
+    else
+      {enh21 = 0;exh21=0; break;}
+  }
+  for(var i=pc.length-1; i>=0; i--)
+  {
+    if(h>22)
+    {
+      if(pc[i].datetime.charAt(0)=='2' && pc[i].time==21)
+     {
+       enh22 = pc[i].enter-pc[i-1].enter;  //SumIn@9-SumIn@8
+       exh22 = pc[i].exit-pc[i-1].exit;
+       break;
+      }
+    } 
+    else
+      {enh22 = 0;exh22=0; break;}
+  }
   
   //////////////////Preparing Data for the WeekDay Chart////////////////////
   var dateObj = new Date();
@@ -92,7 +291,7 @@ export default function Charts() {
     weekdayNumber = 7;
   for(var i=pc.length-1; i>=0; i--)
   {
-    if(weekdayNumber>=1)
+    if(weekdayNumber>=1)  //> or >=
     {
       if((pc[i].datetime).localeCompare("Monday")==0)
      {
@@ -357,7 +556,30 @@ export default function Charts() {
             </CardHeader>
             <CardBody>
               <ChartistGraph
-                data={multipleBarsChart.data}
+                data={{
+                  labels: [
+                    "7:00",
+                    "8:00",
+                    "9:00",
+                    "10:00",
+                    "11:00",
+                    "12:00",
+                    "13:00",
+                    "14:00",
+                    "15:00",
+                    "16:00",
+                    "17:00",
+                    "18:00",
+                    "19:00",
+                    "20:00",
+                    "21:00",
+                    "22:00"
+                  ],
+                  series: [
+                    [enh7, enh8, enh9, enh10, enh11, enh12, enh13, enh14, enh15, enh16, enh17, enh18, enh19, enh20, enh21, enh22],
+                    [exh7, exh8, exh9, exh10, exh11, exh12, exh13, exh14, exh15, exh16, exh17, exh18, exh19, exh20, exh21, exh22]
+                  ]
+                }}
                 type="Bar"
                 options={multipleBarsChart.options}
                 listener={multipleBarsChart.animation}

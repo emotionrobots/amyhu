@@ -197,7 +197,7 @@ const completedTasksChart = {
 const roundedLineChart = {
   data: {
     labels: ["M", "T", "W", "T", "F", "S", "S"],
-    series: [[monday, 17, 7, 17, 23, 18, 38]]
+    series: [[26, 17, 7, 17, 23, 18, 38]]
   },
   options: {
     lineSmooth: Chartist.Interpolation.cardinal({
@@ -207,7 +207,7 @@ const roundedLineChart = {
       showGrid: false
     },
     low: 0,
-    high: 50, // creative tim: we recommend you to set the high sa the biggest value + something for a better look
+    high: 300, // creative tim: we recommend you to set the high sa the biggest value + something for a better look
     chartPadding: {
       top: 0,
       right: 0,
