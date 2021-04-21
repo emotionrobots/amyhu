@@ -34,8 +34,8 @@ import styles from "assets/jss/material-dashboard-pro-react/views/chartsStyle.js
 
 const useStyles = makeStyles(styles);
 
-var enh7,enh8,enh9,enh10,enh11,enh12,enh13,enh14,enh15,enh16,enh17,enh18,enh19,enh20,enh21,enh22=0;
-var exh7,exh8,exh9,exh10,exh11,exh12,exh13,exh14,exh15,exh16,exh17,exh18,exh19,exh20,exh21,exh22=0;
+var enh0,enh1,enh2,enh3,enh4,enh5,enh6,enh7,enh8,enh9,enh10,enh11,enh12,enh13,enh14,enh15,enh16,enh17,enh18,enh19,enh20,enh21,enh22,enh23=0;
+var exh0,exh1,exh2,exh3,exh4,exh5,exh6,exh7,exh8,exh9,exh10,exh11,exh12,exh13,exh14,exh15,exh16,exh17,exh18,exh19,exh20,exh21,exh22,exh23 =0;
 var monday = 0, tuesday = 0, wednesday = 0, thursday = 0, friday = 0, saturday = 0, sunday = 0;
 var jan=0, feb=0, mar=0, apr=0, may=0, jun=0, jul=0, aug=0, sep=0, oct=0, nov=0, dec=0;
 // && (pc[i].time).localeCompare("9")==0 
@@ -60,13 +60,111 @@ export default function Charts() {
   if(h==0)
     h = 24;
   for(var i=pc.length-1; i>=0; i--)
+    {
+      if(h>0)
+      {
+        if(pc[i].datetime.charAt(0)=='2' && pc[i].time==1)
+       {
+         enh0 = pc[i].enter;  //SumIn@8-0 (SumIn@7)
+         exh0 = pc[i].exit;
+         break;
+        }
+      } 
+      else
+        {enh0 = 0; exh0 = 0; break;}
+    }
+  for(var i=pc.length-1; i>=0; i--)
+    {
+      if(h>1)
+      {
+        if(pc[i].datetime.charAt(0)=='2' && pc[i].time==2 && i!=0 && pc[i].day==pc[i-1].day)
+       {
+         enh1 = pc[i].enter-pc[i-1].enter;  //SumIn@9-SumIn@8
+         exh1 = pc[i].exit-pc[i-1].exit;
+         break;
+        }
+      } 
+      else
+        {enh1 = 0; exh1 = 0; break;}
+    }
+  for(var i=pc.length-1; i>=0; i--)
+    {
+      if(h>2)
+      {
+        if(pc[i].datetime.charAt(0)=='2' && pc[i].time==3 && i!=0 && pc[i].day==pc[i-1].day)
+       {
+         enh2 = pc[i].enter-pc[i-1].enter;  //SumIn@9-SumIn@8
+         exh2 = pc[i].exit-pc[i-1].exit;
+         break;
+        }
+      } 
+      else
+        {enh2 = 0; exh2 = 0; break;}
+    }
+  for(var i=pc.length-1; i>=0; i--)
+    {
+      if(h>3)
+      {
+        if(pc[i].datetime.charAt(0)=='2' && pc[i].time==4 && i!=0 && pc[i].day==pc[i-1].day)
+       {
+         enh3 = pc[i].enter-pc[i-1].enter;  //SumIn@9-SumIn@8
+         exh3 = pc[i].exit-pc[i-1].exit;
+         break;
+        }
+      } 
+      else
+        {enh3 = 0; exh3 = 0; break;}
+    }
+  for(var i=pc.length-1; i>=0; i--)
+  {
+    if(h>4)
+    {
+      if(pc[i].datetime.charAt(0)=='2' && pc[i].time==5 && i!=0 && pc[i].day==pc[i-1].day)
+     {
+       enh4 = pc[i].enter-pc[i-1].enter;  //SumIn@9-SumIn@8
+       exh4 = pc[i].exit-pc[i-1].exit;
+       break;
+      }
+    } 
+    else
+      {enh4 = 0; exh4 = 0; break;}
+  }
+  for(var i=pc.length-1; i>=0; i--)
+  {
+    if(h>5)
+    {
+      if(pc[i].datetime.charAt(0)=='2' && pc[i].time==6 && i!=0 && pc[i].day==pc[i-1].day)
+     {
+       enh5 = pc[i].enter-pc[i-1].enter;  //SumIn@9-SumIn@8
+       exh5 = pc[i].exit-pc[i-1].exit;
+       break;
+      }
+    } 
+    else
+      {enh5 = 0; exh5 = 0; break;}
+  }
+  for(var i=pc.length-1; i>=0; i--)
+  {
+    if(h>6)
+    {
+      if(pc[i].datetime.charAt(0)=='2' && pc[i].time==7 && i!=0 && pc[i].day==pc[i-1].day)
+     {
+       enh6 = pc[i].enter-pc[i-1].enter;  //SumIn@9-SumIn@8
+       exh6 = pc[i].exit-pc[i-1].exit;
+       break;
+      }
+    } 
+    else
+      {enh6 = 0; exh6 = 0; break;}
+  }
+  for(var i=pc.length-1; i>=0; i--)
   {
     if(h>7)
     {
-      if(pc[i].datetime.charAt(0)=='2' && pc[i].time==8)
+      if(pc[i].datetime.charAt(0)=='2' && pc[i].time==8 && i!=0 && pc[i].day==pc[i-1].day)
      {
-       enh7 = pc[i].enter;  //SumIn@8-0 (SumIn@7)
-       exh7 = pc[i].exit;
+       enh7 = pc[i].enter-pc[i-1].enter;  //SumIn@9-SumIn@8
+       exh7 = pc[i].exit-pc[i-1].exit;
        break;
       }
     } 
@@ -77,7 +175,7 @@ export default function Charts() {
   {
     if(h>8)
     {
-      if(pc[i].datetime.charAt(0)=='2' && pc[i].time==9)
+      if(pc[i].datetime.charAt(0)=='2' && pc[i].time==9 && i!=0 && pc[i].day==pc[i-1].day)
      {
        enh8 = pc[i].enter-pc[i-1].enter;  //SumIn@9-SumIn@8
        exh8 = pc[i].exit-pc[i-1].exit;
@@ -91,7 +189,7 @@ export default function Charts() {
   {
     if(h>9)
     {
-      if(pc[i].datetime.charAt(0)=='2' && pc[i].time==10)
+      if(pc[i].datetime.charAt(0)=='2' && pc[i].time==10 && i!=0 && pc[i].day==pc[i-1].day)
      {
        enh9 = pc[i].enter-pc[i-1].enter;  //SumIn@9-SumIn@8
        exh9 = pc[i].exit-pc[i-1].exit;
@@ -105,7 +203,7 @@ export default function Charts() {
   {
     if(h>10)
     {
-      if(pc[i].datetime.charAt(0)=='2' && pc[i].time==11)
+      if(pc[i].datetime.charAt(0)=='2' && pc[i].time==11 && i!=0 && pc[i].day==pc[i-1].day)
      {
        enh10 = pc[i].enter-pc[i-1].enter;  //SumIn@9-SumIn@8
        exh10 = pc[i].exit-pc[i-1].exit;
@@ -119,7 +217,7 @@ export default function Charts() {
   {
     if(h>11)
     {
-      if(pc[i].datetime.charAt(0)=='2' && pc[i].time==12)
+      if(pc[i].datetime.charAt(0)=='2' && pc[i].time==12 && i!=0 && pc[i].day==pc[i-1].day)
      {
        enh11 = pc[i].enter-pc[i-1].enter;  //SumIn@9-SumIn@8
        exh11 = pc[i].exit-pc[i-1].exit;
@@ -133,7 +231,7 @@ export default function Charts() {
   {
     if(h>12)
     {
-      if(pc[i].datetime.charAt(0)=='2' && pc[i].time==13)
+      if(pc[i].datetime.charAt(0)=='2' && pc[i].time==13 && i!=0 && pc[i].day==pc[i-1].day)
      {
        enh12 = pc[i].enter-pc[i-1].enter;  //SumIn@9-SumIn@8
        exh12 = pc[i].exit-pc[i-1].exit;
@@ -147,7 +245,7 @@ export default function Charts() {
   {
     if(h>13)
     {
-      if(pc[i].datetime.charAt(0)=='2' && pc[i].time==14)
+      if(pc[i].datetime.charAt(0)=='2' && pc[i].time==14 && i!=0 && pc[i].day==pc[i-1].day)
      {
        enh13 = pc[i].enter-pc[i-1].enter;  //SumIn@9-SumIn@8
        exh13 = pc[i].exit-pc[i-1].exit;
@@ -161,7 +259,7 @@ export default function Charts() {
   {
     if(h>14)
     {
-      if(pc[i].datetime.charAt(0)=='2' && pc[i].time==15)
+      if(pc[i].datetime.charAt(0)=='2' && pc[i].time==15 && i!=0 && pc[i].day==pc[i-1].day)
      {
        enh14 = pc[i].enter-pc[i-1].enter;  //SumIn@9-SumIn@8
        exh14 = pc[i].exit-pc[i-1].exit;
@@ -175,7 +273,7 @@ export default function Charts() {
   {
     if(h>15)
     {
-      if(pc[i].datetime.charAt(0)=='2' && pc[i].time==16)
+      if(pc[i].datetime.charAt(0)=='2' && pc[i].time==16 && i!=0 && pc[i].day==pc[i-1].day)
      {
        enh15 = pc[i].enter-pc[i-1].enter;  //SumIn@9-SumIn@8
        exh15 = pc[i].exit-pc[i-1].exit;
@@ -189,7 +287,7 @@ export default function Charts() {
   {
     if(h>16)
     {
-      if(pc[i].datetime.charAt(0)=='2' && pc[i].time==17)
+      if(pc[i].datetime.charAt(0)=='2' && pc[i].time==17 && i!=0 && pc[i].day==pc[i-1].day)
      {
        enh16 = pc[i].enter-pc[i-1].enter;  //SumIn@9-SumIn@8
        exh16 = pc[i].exit-pc[i-1].exit;
@@ -203,7 +301,7 @@ export default function Charts() {
   {
     if(h>17)
     {
-      if(pc[i].datetime.charAt(0)=='2' && pc[i].time==18)
+      if(pc[i].datetime.charAt(0)=='2' && pc[i].time==18 && i!=0 && pc[i].day==pc[i-1].day)
      {
        enh17 = pc[i].enter-pc[i-1].enter;  //SumIn@9-SumIn@8
        exh17 = pc[i].exit-pc[i-1].exit;
@@ -217,7 +315,7 @@ export default function Charts() {
   {
     if(h>18)
     {
-      if(pc[i].datetime.charAt(0)=='2' && pc[i].time==19)
+      if(pc[i].datetime.charAt(0)=='2' && pc[i].time==19 && i!=0 && pc[i].day==pc[i-1].day)
      {
        enh18 = pc[i].enter-pc[i-1].enter;  //SumIn@9-SumIn@8
        exh18 = pc[i].exit-pc[i-1].exit;
@@ -231,7 +329,7 @@ export default function Charts() {
   {
     if(h>19)
     {
-      if(pc[i].datetime.charAt(0)=='2' && pc[i].time==20)
+      if(pc[i].datetime.charAt(0)=='2' && pc[i].time==20 && i!=0 && pc[i].day==pc[i-1].day)
      {
        enh19 = pc[i].enter-pc[i-1].enter;  //SumIn@9-SumIn@8
        exh19 = pc[i].exit-pc[i-1].exit;
@@ -245,7 +343,7 @@ export default function Charts() {
   {
     if(h>20)
     {
-      if(pc[i].datetime.charAt(0)=='2' && pc[i].time==21)
+      if(pc[i].datetime.charAt(0)=='2' && pc[i].time==21 && i!=0 && pc[i].day==pc[i-1].day)
      {
        enh20 = pc[i].enter-pc[i-1].enter;  //SumIn@9-SumIn@8
        exh20 = pc[i].exit-pc[i-1].exit;
@@ -259,7 +357,7 @@ export default function Charts() {
   {
     if(h>21)
     {
-      if(pc[i].datetime.charAt(0)=='2' && pc[i].time==22)
+      if(pc[i].datetime.charAt(0)=='2' && pc[i].time==22 && i!=0 && pc[i].day==pc[i-1].day)
      {
        enh21 = pc[i].enter-pc[i-1].enter;  //SumIn@9-SumIn@8
        exh21 = pc[i].exit-pc[i-1].exit;
@@ -273,7 +371,7 @@ export default function Charts() {
   {
     if(h>22)
     {
-      if(pc[i].datetime.charAt(0)=='2' && pc[i].time==21)
+      if(pc[i].datetime.charAt(0)=='2' && pc[i].time==21 && i!=0 && pc[i].day==pc[i-1].day)
      {
        enh22 = pc[i].enter-pc[i-1].enter;  //SumIn@9-SumIn@8
        exh22 = pc[i].exit-pc[i-1].exit;
@@ -283,6 +381,20 @@ export default function Charts() {
     else
       {enh22 = 0;exh22=0; break;}
   }
+  for(var i=pc.length-1; i>=0; i--)
+  {
+    if(h>23)
+    {
+      if(pc[i].datetime.charAt(0)=='2' && pc[i].time==22 && i!=0 && pc[i].day==pc[i-1].day)
+     {
+       enh23 = pc[i].enter-pc[i-1].enter;  //SumIn@9-SumIn@8
+       exh23 = pc[i].exit-pc[i-1].exit;
+       break;
+      }
+    } 
+    else
+      {enh23 = 0;exh23=0; break;}
+  }
   
   //////////////////Preparing Data for the WeekDay Chart////////////////////
   var dateObj = new Date();
@@ -291,7 +403,7 @@ export default function Charts() {
     weekdayNumber = 7;
   for(var i=pc.length-1; i>=0; i--)
   {
-    if(weekdayNumber>=1)  //> or >=
+    if(weekdayNumber>1)  //> or >=
     {
       if((pc[i].datetime).localeCompare("Monday")==0)
      {
@@ -304,7 +416,7 @@ export default function Charts() {
   }
   for(var i=pc.length-1; i>=0; i--)
   {
-    if(weekdayNumber>=2)
+    if(weekdayNumber>2)
     {
       if((pc[i].datetime).localeCompare("Tuesday")==0)
      {
@@ -317,7 +429,7 @@ export default function Charts() {
   }
   for(var i=pc.length-1; i>=0; i--)
   {
-    if(weekdayNumber>=3)
+    if(weekdayNumber>3)
     {
       if((pc[i].datetime).localeCompare("Wednesday")==0)
      {
@@ -330,7 +442,7 @@ export default function Charts() {
   }
   for(var i=pc.length-1; i>=0; i--)
   {
-    if(weekdayNumber>=4)
+    if(weekdayNumber>4)
     {
       if((pc[i].datetime).localeCompare("Thursday")==0)
      {
@@ -343,7 +455,7 @@ export default function Charts() {
   }
   for(var i=pc.length-1; i>=0; i--)
   {
-    if(weekdayNumber>=5)
+    if(weekdayNumber>5)
     {
       if((pc[i].datetime).localeCompare("Friday")==0)
      {
@@ -356,7 +468,7 @@ export default function Charts() {
   }
   for(var i=pc.length-1; i>=0; i--)
   {
-    if(weekdayNumber>=6)
+    if(weekdayNumber>6)
     {
       if((pc[i].datetime).localeCompare("Saturday")==0)
      {
@@ -369,7 +481,7 @@ export default function Charts() {
   }
   for(var i=pc.length-1; i>=0; i--)
   {
-    if(weekdayNumber>=7)
+    if(weekdayNumber>7)
     {
       if((pc[i].datetime).localeCompare("Sunday")==0)
      {
@@ -386,7 +498,7 @@ export default function Charts() {
   m=m+1;
   for(var i=pc.length-1; i>=0; i--)
   {
-    if(m>=1)
+    if(m>1)
     {
       if((pc[i].datetime).localeCompare("January")==0)
      {
@@ -399,7 +511,7 @@ export default function Charts() {
   }
   for(var i=pc.length-1; i>=0; i--)
   {
-    if(m>=2)
+    if(m>2)
     {
       if((pc[i].datetime).localeCompare("February")==0)
      {
@@ -412,7 +524,7 @@ export default function Charts() {
   }
   for(var i=pc.length-1; i>=0; i--)
   {
-    if(m>=3)
+    if(m>3)
     {
       if((pc[i].datetime).localeCompare("March")==0)
      {
@@ -425,7 +537,7 @@ export default function Charts() {
   }
   for(var i=pc.length-1; i>=0; i--)
   {
-    if(m>=4)
+    if(m>4)
     {
       if((pc[i].datetime).localeCompare("April")==0)
      {
@@ -438,7 +550,7 @@ export default function Charts() {
   }
   for(var i=pc.length-1; i>=0; i--)
   {
-    if(m>=5)
+    if(m>5)
     {
       if((pc[i].datetime).localeCompare("May")==0)
      {
@@ -451,7 +563,7 @@ export default function Charts() {
   }
   for(var i=pc.length-1; i>=0; i--)
   {
-    if(m>=6)
+    if(m>6)
     {
       if((pc[i].datetime).localeCompare("June")==0)
      {
@@ -464,7 +576,7 @@ export default function Charts() {
   }
   for(var i=pc.length-1; i>=0; i--)
   {
-    if(m>=7)
+    if(m>7)
     {
       if((pc[i].datetime).localeCompare("July")==0)
      {
@@ -477,7 +589,7 @@ export default function Charts() {
   }
   for(var i=pc.length-1; i>=0; i--)
   {
-    if(m>=8)
+    if(m>8)
     {
       if((pc[i].datetime).localeCompare("August")==0)
      {
@@ -490,7 +602,7 @@ export default function Charts() {
   }
   for(var i=pc.length-1; i>=0; i--)
   {
-    if(m>=9)
+    if(m>9)
     {
       if((pc[i].datetime).localeCompare("September")==0)
      {
@@ -503,7 +615,7 @@ export default function Charts() {
   }
   for(var i=pc.length-1; i>=0; i--)
   {
-    if(m>=10)
+    if(m>10)
     {
       if((pc[i].datetime).localeCompare("October")==0)
      {
@@ -516,7 +628,7 @@ export default function Charts() {
   }
   for(var i=pc.length-1; i>=0; i--)
   {
-    if(m>=11)
+    if(m>11)
     {
       if((pc[i].datetime).localeCompare("November")==0)
      {
@@ -529,7 +641,7 @@ export default function Charts() {
   }
   for(var i=pc.length-1; i>=0; i--)
   {
-    if(m>=12)
+    if(m>12)
     {
       if((pc[i].datetime).localeCompare("December")==0)
      {
@@ -558,6 +670,13 @@ export default function Charts() {
               <ChartistGraph
                 data={{
                   labels: [
+                    "0:00",
+                    "1:00",
+                    "2:00",
+                    "3:00",
+                    "4:00",
+                    "5:00",
+                    "6:00",
                     "7:00",
                     "8:00",
                     "9:00",
@@ -573,11 +692,12 @@ export default function Charts() {
                     "19:00",
                     "20:00",
                     "21:00",
-                    "22:00"
+                    "22:00",
+                    "23:00"
                   ],
                   series: [
-                    [enh7, enh8, enh9, enh10, enh11, enh12, enh13, enh14, enh15, enh16, enh17, enh18, enh19, enh20, enh21, enh22],
-                    [exh7, exh8, exh9, exh10, exh11, exh12, exh13, exh14, exh15, exh16, exh17, exh18, exh19, exh20, exh21, exh22]
+                    [enh0, enh1, enh2, enh3, enh4, enh5, enh6, enh7, enh8, enh9, enh10, enh11, enh12, enh13, enh14, enh15, enh16, enh17, enh18, enh19, enh20, enh21, enh22, enh23],
+                    [exh0, exh1, exh2, exh3, exh4, exh5, exh6, exh7, exh8, exh9, exh10, exh11, exh12, exh13, exh14, exh15, exh16, exh17, exh18, exh19, exh20, exh21, exh22, exh23]
                   ]
                 }}
                 type="Bar"

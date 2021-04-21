@@ -5,7 +5,7 @@ var AWS = require('aws-sdk');
 AWS.config.loadFromPath('credentials.json');
 AWS.config.update({region: "us-west-2"});
 
-const tableName = "pcentrys"
+const tableName = "PEOPLE_COUNTER"
 var dynamodb = new AWS.DynamoDB({apiVersion: '2012-08-10'});
 var docClient = new AWS.DynamoDB.DocumentClient();
 
