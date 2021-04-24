@@ -59,11 +59,12 @@ export default function Charts() {
   var h = date.getHours();
   if(h==0)
     h = 24;
+  var day = date.getDate();
   for(var i=pc.length-1; i>=0; i--)
     {
       if(h>0)
       {
-        if(pc[i].datetime.charAt(0)=='2' && pc[i].time==1)
+        if(pc[i].datetime.charAt(0)=='2' && pc[i].day==day && pc[i].time==1)
        {
          enh0 = pc[i].enter;  //SumIn@8-0 (SumIn@7)
          exh0 = pc[i].exit;
@@ -77,7 +78,7 @@ export default function Charts() {
     {
       if(h>1)
       {
-        if(pc[i].datetime.charAt(0)=='2' && pc[i].time==2 && i!=0 && pc[i].day==pc[i-1].day && pc[i].time-1==pc[i-1].time)
+        if(pc[i].datetime.charAt(0)=='2' && pc[i].day==day && pc[i].time==2 && i!=0 && pc[i].day==pc[i-1].day && pc[i].time-1==pc[i-1].time)
        {
          enh1 = pc[i].enter-pc[i-1].enter;  //SumIn@9-SumIn@8
          exh1 = pc[i].exit-pc[i-1].exit;
@@ -91,7 +92,7 @@ export default function Charts() {
     {
       if(h>2)
       {
-        if(pc[i].datetime.charAt(0)=='2' && pc[i].time==3 && i!=0 && pc[i].day==pc[i-1].day && pc[i].time-1==pc[i-1].time)
+        if(pc[i].datetime.charAt(0)=='2' && pc[i].day==day && pc[i].time==3 && i!=0 && pc[i].day==pc[i-1].day && pc[i].time-1==pc[i-1].time)
        {
          enh2 = pc[i].enter-pc[i-1].enter;  //SumIn@9-SumIn@8
          exh2 = pc[i].exit-pc[i-1].exit;
@@ -105,7 +106,7 @@ export default function Charts() {
     {
       if(h>3)
       {
-        if(pc[i].datetime.charAt(0)=='2' && pc[i].time==4 && i!=0 && pc[i].day==pc[i-1].day && pc[i].time-1==pc[i-1].time)
+        if(pc[i].datetime.charAt(0)=='2' && pc[i].day==day && pc[i].time==4 && i!=0 && pc[i].day==pc[i-1].day && pc[i].time-1==pc[i-1].time)
        {
          enh3 = pc[i].enter-pc[i-1].enter;  //SumIn@9-SumIn@8
          exh3 = pc[i].exit-pc[i-1].exit;
@@ -119,7 +120,7 @@ export default function Charts() {
   {
     if(h>4)
     {
-      if(pc[i].datetime.charAt(0)=='2' && pc[i].time==5 && i!=0 && pc[i].day==pc[i-1].day && pc[i].time-1==pc[i-1].time)
+      if(pc[i].datetime.charAt(0)=='2' && pc[i].day==day && pc[i].time==5 && i!=0 && pc[i].day==pc[i-1].day && pc[i].time-1==pc[i-1].time)
      {
        enh4 = pc[i].enter-pc[i-1].enter;  //SumIn@9-SumIn@8
        exh4 = pc[i].exit-pc[i-1].exit;
@@ -133,7 +134,7 @@ export default function Charts() {
   {
     if(h>5)
     {
-      if(pc[i].datetime.charAt(0)=='2' && pc[i].time==6 && i!=0 && pc[i].day==pc[i-1].day && pc[i].time-1==pc[i-1].time)
+      if(pc[i].datetime.charAt(0)=='2' && pc[i].day==day && pc[i].time==6 && i!=0 && pc[i].day==pc[i-1].day && pc[i].time-1==pc[i-1].time)
      {
        enh5 = pc[i].enter-pc[i-1].enter;  //SumIn@9-SumIn@8
        exh5 = pc[i].exit-pc[i-1].exit;
@@ -147,7 +148,7 @@ export default function Charts() {
   {
     if(h>6)
     {
-      if(pc[i].datetime.charAt(0)=='2' && pc[i].time==7 && i!=0 && pc[i].day==pc[i-1].day && pc[i].time-1==pc[i-1].time)
+      if(pc[i].datetime.charAt(0)=='2' && pc[i].day==day && pc[i].time==7 && i!=0 && pc[i].day==pc[i-1].day && pc[i].time-1==pc[i-1].time)
      {
        enh6 = pc[i].enter-pc[i-1].enter;  //SumIn@9-SumIn@8
        exh6 = pc[i].exit-pc[i-1].exit;
@@ -161,7 +162,7 @@ export default function Charts() {
   {
     if(h>7)
     {
-      if(pc[i].datetime.charAt(0)=='2' && pc[i].time==8 && i!=0 && pc[i].day==pc[i-1].day && pc[i].time-1==pc[i-1].time)
+      if(pc[i].datetime.charAt(0)=='2' && pc[i].day==day && pc[i].time==8 && i!=0 && pc[i].day==pc[i-1].day && pc[i].time-1==pc[i-1].time)
      {
        enh7 = pc[i].enter-pc[i-1].enter;  //SumIn@9-SumIn@8
        exh7 = pc[i].exit-pc[i-1].exit;
@@ -175,7 +176,7 @@ export default function Charts() {
   {
     if(h>8)
     {
-      if(pc[i].datetime.charAt(0)=='2' && pc[i].time==9 && i!=0 && pc[i].day==pc[i-1].day && pc[i].time-1==pc[i-1].time)
+      if(pc[i].datetime.charAt(0)=='2' && pc[i].day==day && pc[i].time==9 && i!=0 && pc[i].day==pc[i-1].day && pc[i].time-1==pc[i-1].time)
      {
        enh8 = pc[i].enter-pc[i-1].enter;  //SumIn@9-SumIn@8
        exh8 = pc[i].exit-pc[i-1].exit;
@@ -189,7 +190,7 @@ export default function Charts() {
   {
     if(h>9)
     {
-      if(pc[i].datetime.charAt(0)=='2' && pc[i].time==10 && i!=0 && pc[i].day==pc[i-1].day && pc[i].time-1==pc[i-1].time)
+      if(pc[i].datetime.charAt(0)=='2' && pc[i].day==day && pc[i].time==10 && i!=0 && pc[i].day==pc[i-1].day && pc[i].time-1==pc[i-1].time)
      {
        enh9 = pc[i].enter-pc[i-1].enter;  //SumIn@9-SumIn@8
        exh9 = pc[i].exit-pc[i-1].exit;
@@ -199,11 +200,12 @@ export default function Charts() {
     else
       {enh9 = 0;exh9=0; break;}
   }
+  //
   for(var i=pc.length-1; i>=0; i--)
   {
     if(h>10)
     {
-      if(pc[i].datetime.charAt(0)=='2' && pc[i].time==11 && i!=0 && pc[i].day==pc[i-1].day && pc[i].time-1==pc[i-1].time)
+      if(pc[i].datetime.charAt(0)=='2' && pc[i].day==day && pc[i].time==11 && i!=0 && pc[i].day==pc[i-1].day && pc[i].time-1==pc[i-1].time)
      {
        enh10 = pc[i].enter-pc[i-1].enter;  //SumIn@9-SumIn@8
        exh10 = pc[i].exit-pc[i-1].exit;
@@ -217,7 +219,7 @@ export default function Charts() {
   {
     if(h>11)
     {
-      if(pc[i].datetime.charAt(0)=='2' && pc[i].time==12 && i!=0 && pc[i].day==pc[i-1].day && pc[i].time-1==pc[i-1].time)
+      if(pc[i].datetime.charAt(0)=='2' && pc[i].day==day && pc[i].time==12 && i!=0 && pc[i].day==pc[i-1].day && pc[i].time-1==pc[i-1].time)
      {
        enh11 = pc[i].enter-pc[i-1].enter;  //SumIn@9-SumIn@8
        exh11 = pc[i].exit-pc[i-1].exit;
@@ -231,7 +233,7 @@ export default function Charts() {
   {
     if(h>12)
     {
-      if(pc[i].datetime.charAt(0)=='2' && pc[i].time==13 && i!=0 && pc[i].day==pc[i-1].day && pc[i].time-1==pc[i-1].time)
+      if(pc[i].datetime.charAt(0)=='2' && pc[i].day==day && pc[i].time==13 && i!=0 && pc[i].day==pc[i-1].day && pc[i].time-1==pc[i-1].time)
      {
        enh12 = pc[i].enter-pc[i-1].enter;  //SumIn@9-SumIn@8
        exh12 = pc[i].exit-pc[i-1].exit;
@@ -245,7 +247,7 @@ export default function Charts() {
   {
     if(h>13)
     {
-      if(pc[i].datetime.charAt(0)=='2' && pc[i].time==14 && i!=0 && pc[i].day==pc[i-1].day && pc[i].time-1==pc[i-1].time)
+      if(pc[i].datetime.charAt(0)=='2' && pc[i].day==day && pc[i].time==14 && i!=0 && pc[i].day==pc[i-1].day && pc[i].time-1==pc[i-1].time)
      {
        enh13 = pc[i].enter-pc[i-1].enter;  //SumIn@9-SumIn@8
        exh13 = pc[i].exit-pc[i-1].exit;
@@ -259,7 +261,7 @@ export default function Charts() {
   {
     if(h>14)
     {
-      if(pc[i].datetime.charAt(0)=='2' && pc[i].time==15 && i!=0 && pc[i].day==pc[i-1].day && pc[i].time-1==pc[i-1].time)
+      if(pc[i].datetime.charAt(0)=='2' && pc[i].day==day && pc[i].time==15 && i!=0 && pc[i].day==pc[i-1].day && pc[i].time-1==pc[i-1].time)
      {
        enh14 = pc[i].enter-pc[i-1].enter;  //SumIn@9-SumIn@8
        exh14 = pc[i].exit-pc[i-1].exit;
@@ -273,7 +275,7 @@ export default function Charts() {
   {
     if(h>15)
     {
-      if(pc[i].datetime.charAt(0)=='2' && pc[i].time==16 && i!=0 && pc[i].day==pc[i-1].day && pc[i].time-1==pc[i-1].time)
+      if(pc[i].datetime.charAt(0)=='2' && pc[i].day==day && pc[i].time==16 && i!=0 && pc[i].day==pc[i-1].day && pc[i].time-1==pc[i-1].time)
      {
        enh15 = pc[i].enter-pc[i-1].enter;  //SumIn@9-SumIn@8
        exh15 = pc[i].exit-pc[i-1].exit;
@@ -287,7 +289,7 @@ export default function Charts() {
   {
     if(h>16)
     {
-      if(pc[i].datetime.charAt(0)=='2' && pc[i].time==17 && i!=0 && pc[i].day==pc[i-1].day && pc[i].time-1==pc[i-1].time)
+      if(pc[i].datetime.charAt(0)=='2' && pc[i].day==day && pc[i].time==17 && i!=0 && pc[i].day==pc[i-1].day && pc[i].time-1==pc[i-1].time)
      {
        enh16 = pc[i].enter-pc[i-1].enter;  //SumIn@9-SumIn@8
        exh16 = pc[i].exit-pc[i-1].exit;
@@ -301,7 +303,7 @@ export default function Charts() {
   {
     if(h>17)
     {
-      if(pc[i].datetime.charAt(0)=='2' && pc[i].time==18 && i!=0 && pc[i].day==pc[i-1].day && pc[i].time-1==pc[i-1].time)
+      if(pc[i].datetime.charAt(0)=='2' && pc[i].day==day && pc[i].time==18 && i!=0 && pc[i].day==pc[i-1].day && pc[i].time-1==pc[i-1].time)
      {
        enh17 = pc[i].enter-pc[i-1].enter;  //SumIn@9-SumIn@8
        exh17 = pc[i].exit-pc[i-1].exit;
@@ -315,7 +317,7 @@ export default function Charts() {
   {
     if(h>18)
     {
-      if(pc[i].datetime.charAt(0)=='2' && pc[i].time==19 && i!=0 && pc[i].day==pc[i-1].day && pc[i].time-1==pc[i-1].time)
+      if(pc[i].datetime.charAt(0)=='2' && pc[i].day==day && pc[i].time==19 && i!=0 && pc[i].day==pc[i-1].day && pc[i].time-1==pc[i-1].time)
      {
        enh18 = pc[i].enter-pc[i-1].enter;  //SumIn@9-SumIn@8
        exh18 = pc[i].exit-pc[i-1].exit;
@@ -329,7 +331,7 @@ export default function Charts() {
   {
     if(h>19)
     {
-      if(pc[i].datetime.charAt(0)=='2' && pc[i].time==20 && i!=0 && pc[i].day==pc[i-1].day && pc[i].time-1==pc[i-1].time)
+      if(pc[i].datetime.charAt(0)=='2' && pc[i].day==day && pc[i].time==20 && i!=0 && pc[i].day==pc[i-1].day && pc[i].time-1==pc[i-1].time)
      {
        enh19 = pc[i].enter-pc[i-1].enter;  //SumIn@9-SumIn@8
        exh19 = pc[i].exit-pc[i-1].exit;
@@ -343,7 +345,7 @@ export default function Charts() {
   {
     if(h>20)
     {
-      if(pc[i].datetime.charAt(0)=='2' && pc[i].time==21 && i!=0 && pc[i].day==pc[i-1].day && pc[i].time-1==pc[i-1].time)
+      if(pc[i].datetime.charAt(0)=='2' && pc[i].day==day && pc[i].time==21 && i!=0 && pc[i].day==pc[i-1].day && pc[i].time-1==pc[i-1].time)
      {
        enh20 = pc[i].enter-pc[i-1].enter;  //SumIn@9-SumIn@8
        exh20 = pc[i].exit-pc[i-1].exit;
@@ -357,7 +359,7 @@ export default function Charts() {
   {
     if(h>21)
     {
-      if(pc[i].datetime.charAt(0)=='2' && pc[i].time==22 && i!=0 && pc[i].day==pc[i-1].day && pc[i].time-1==pc[i-1].time)
+      if(pc[i].datetime.charAt(0)=='2' && pc[i].day==day && pc[i].time==22 && i!=0 && pc[i].day==pc[i-1].day && pc[i].time-1==pc[i-1].time)
      {
        enh21 = pc[i].enter-pc[i-1].enter;  //SumIn@9-SumIn@8
        exh21 = pc[i].exit-pc[i-1].exit;
@@ -371,7 +373,7 @@ export default function Charts() {
   {
     if(h>22)
     {
-      if(pc[i].datetime.charAt(0)=='2' && pc[i].time==21 && i!=0 && pc[i].day==pc[i-1].day && pc[i].time-1==pc[i-1].time)
+      if(pc[i].datetime.charAt(0)=='2' && pc[i].day==day && pc[i].time==21 && i!=0 && pc[i].day==pc[i-1].day && pc[i].time-1==pc[i-1].time)
      {
        enh22 = pc[i].enter-pc[i-1].enter;  //SumIn@9-SumIn@8
        exh22 = pc[i].exit-pc[i-1].exit;
@@ -385,7 +387,7 @@ export default function Charts() {
   {
     if(h>23)
     {
-      if(pc[i].datetime.charAt(0)=='2' && pc[i].time==22 && i!=0 && pc[i].day==pc[i-1].day && pc[i].time-1==pc[i-1].time)
+      if(pc[i].datetime.charAt(0)=='2' && pc[i].day==day && pc[i].time==22 && i!=0 && pc[i].day==pc[i-1].day && pc[i].time-1==pc[i-1].time)
      {
        enh23 = pc[i].enter-pc[i-1].enter;  //SumIn@9-SumIn@8
        exh23 = pc[i].exit-pc[i-1].exit;
