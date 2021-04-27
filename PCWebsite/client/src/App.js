@@ -11,6 +11,7 @@ import CardText from "components/Card/CardText.js";
 //const { useState } = React;
 var location="";
 var cur=0;
+//hi
 
 const App = () => {
  
