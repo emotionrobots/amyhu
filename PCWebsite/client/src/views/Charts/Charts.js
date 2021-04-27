@@ -54,12 +54,15 @@ export default function Charts() {
       });
   }, []);
 
+  //Make conversions in pc if plotting the graph in local timezone
+
   //////////////////Preparing Data for the Hour Chart////////////////////
   var date = new Date();
-  var h = date.getHours();
+  //console.log("THIS IS UTC DAY: "+date.getUTCHours());
+  var h = date.getUTCHours();
   if(h==0)
     h = 24;
-  var day = date.getDate();
+  var day = date.getUTCDate();
   for(var i=pc.length-1; i>=0; i--)
     {
       if(h>0)
@@ -200,7 +203,6 @@ export default function Charts() {
     else
       {enh9 = 0;exh9=0; break;}
   }
-  //
   for(var i=pc.length-1; i>=0; i--)
   {
     if(h>10)
@@ -400,7 +402,7 @@ export default function Charts() {
   
   //////////////////Preparing Data for the WeekDay Chart////////////////////
   var dateObj = new Date();
-  var weekdayNumber = dateObj.getDay();
+  var weekdayNumber = dateObj.getUTCDay();
   if(weekdayNumber==0)
     weekdayNumber = 7;
   for(var i=pc.length-1; i>=0; i--)
@@ -496,7 +498,7 @@ export default function Charts() {
   }
   //////////////Preparing Data for the Month of the Year Chart////////////////////
   var d = new Date();
-  var m = d.getMonth();
+  var m = d.getUTCMonth();
   m=m+1;
   for(var i=pc.length-1; i>=0; i--)
   {
