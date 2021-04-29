@@ -18,7 +18,7 @@ const App = () => {
   const [pc, setPc] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:9000/testdynamo")
+    fetch("https://pplcnt-backend.e-motion.ai/testdynamo")
       .then(response => response.json())
       .then(data => {
         console.log(data);
