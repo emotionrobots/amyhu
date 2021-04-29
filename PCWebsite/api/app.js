@@ -18,8 +18,8 @@ console.log('--------------------Running Server--------------------');
 
 // Setup HTTPS key and certification
 var options = {
-key: fs.readFileSync('/etc/letsencrypt/live/viroguard.ai/privkey.pem'),
-cert: fs.readFileSync('/etc/letsencrypt/live/viroguard.ai/cert.pem')
+key: fs.readFileSync('/etc/letsencrypt/live/pplcnt-backend.e-motion.ai/privkey.pem'),
+cert: fs.readFileSync('/etc/letsencrypt/live/pplcnt-backend.e-motion.ai/cert.pem')
 };
 
 // Create server
