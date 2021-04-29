@@ -10,6 +10,7 @@ var dynamo = require('dynamodb');
 AWS.config.update({region: "us-west-2"});
 dynamo.AWS.config.loadFromPath('credentials.json');
 
+var fs = require('fs');
 //------------------------------------------------------------
 // HTTPS Support Functions
 //------------------------------------------------------------
