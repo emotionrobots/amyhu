@@ -31,7 +31,7 @@ res.setHeader('Access-Control-Allow-Methods','OPTIONS,GET,POST')
 res.setHeader('Access-Control-Allow-Headers','*') 
 })
 
-const BROKER_URL = "mqtt://18.237.68.217";
+const BROKER_URL = "mqtt://pplcnt-mqtt.e-motion.ai";
 const TOPIC_NAME = "topic1";
 const CLIENT_ID = "subscribe.js";
 const monthNames = ["January", "February", "March", "April", "May", "June",
