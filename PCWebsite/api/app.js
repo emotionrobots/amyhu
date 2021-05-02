@@ -10,6 +10,7 @@ var dynamo = require('dynamodb');
 AWS.config.update({region: "us-west-2"});
 dynamo.AWS.config.loadFromPath('credentials.json');
 
+var https = require('https');
 var fs = require('fs');
 //------------------------------------------------------------
 // HTTPS Support Functions
@@ -17,7 +18,7 @@ var fs = require('fs');
 console.log('--------------------Running Server--------------------');
 
 // Setup HTTPS key and certification
-/*var options = {
+var options = {
 key: fs.readFileSync('/etc/letsencrypt/live/pplcnt-backend.e-motion.ai/privkey.pem'),
 cert: fs.readFileSync('/etc/letsencrypt/live/pplcnt-backend.e-motion.ai/cert.pem')
 };
@@ -28,7 +29,7 @@ console.log('\n'+req.method+" - "+Date());
 res.setHeader('Access-Control-Allow-Origin','*')
 res.setHeader('Access-Control-Allow-Methods','OPTIONS,GET,POST')
 res.setHeader('Access-Control-Allow-Headers','*') 
-})*/
+})
 
 const BROKER_URL = "mqtt://18.237.68.217";
 const TOPIC_NAME = "topic1";
