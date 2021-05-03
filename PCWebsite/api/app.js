@@ -10,8 +10,10 @@ var dynamo = require('dynamodb');
 AWS.config.update({region: "us-west-2"});
 dynamo.AWS.config.loadFromPath('credentials.json');
 
+var http = require('http');
 var https = require('https');
 var fs = require('fs');
+/*
 //------------------------------------------------------------
 // HTTPS Support Functions
 //------------------------------------------------------------
@@ -29,7 +31,8 @@ console.log('\n'+req.method+" - "+Date());
 res.setHeader('Access-Control-Allow-Origin','*')
 res.setHeader('Access-Control-Allow-Methods','OPTIONS,GET,POST')
 res.setHeader('Access-Control-Allow-Headers','*') 
-})
+})*/
+
 
 const BROKER_URL = "mqtt://pplcnt-mqtt.e-motion.ai";
 const TOPIC_NAME = "topic1";
@@ -217,6 +220,20 @@ app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/testAPI", testAPIRouter);
 app.use("/testdynamo", testdynamoRouter);
+
+const httpServer = http.createServer(app);
+const httpsServer = https.createServer({
+  key: fs.readFileSync('/etc/letsencrypt/live/pplcnt-backend.e-motion.ai/privkey.pem'),
+  cert: fs.readFileSync('/etc/letsencrypt/live/pplcnt-backend.e-motion.ai/fullchain.pem'),
+}, app);
+
+httpServer.listen(80, () => {
+    console.log('HTTP Server running on port 80');
+});
+
+httpsServer.listen(443, () => {
+    console.log('HTTPS Server running on port 443');
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
