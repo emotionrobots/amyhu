@@ -227,8 +227,12 @@ const httpsServer = https.createServer({
   cert: fs.readFileSync('/etc/letsencrypt/live/pplcnt-backend.e-motion.ai/fullchain.pem'),
 }, app);
 
-httpsServer.listen(443, () => {
-    console.log('HTTPS Server running on port 443');
+httpServer.listen(() => {
+    console.log('HTTP Server running');
+});
+
+httpsServer.listen(() => {
+    console.log('HTTPS Server running');
 });
 
 // catch 404 and forward to error handler
