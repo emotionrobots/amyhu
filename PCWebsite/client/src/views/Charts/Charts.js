@@ -45,7 +45,7 @@ export default function Charts() {
   const [pc, setPc] = useState([]);
 
   useEffect(() => {
-    fetch("https://pplcnt-backend.e-motion.ai/testdynamo", {
+    fetch("https://pplcnt-web.e-motion.ai:9000/testdynamo", {
       mode: 'cors'
     })
       .then(response => response.json())
