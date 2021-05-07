@@ -229,8 +229,8 @@ app.use("/testdynamo", testdynamoRouter);
 
 const httpServer = http.createServer(app);
 const httpsServer = https.createServer({
-  key: fs.readFileSync('/etc/letsencrypt/live/pplcnt-backend.e-motion.ai/privkey.pem'),
-  cert: fs.readFileSync('/etc/letsencrypt/live/pplcnt-backend.e-motion.ai/fullchain.pem'),
+  key: fs.readFileSync('/etc/letsencrypt/live/pplcnt-web.e-motion.ai/privkey.pem'),
+  cert: fs.readFileSync('/etc/letsencrypt/live/pplcnt-web.e-motion.ai/fullchain.pem'),
 }, app);
 
 httpServer.listen(() => {
