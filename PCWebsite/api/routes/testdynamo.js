@@ -9,7 +9,7 @@ const tableName = "PEOPLE_COUNTER"
 var dynamodb = new AWS.DynamoDB({apiVersion: '2012-08-10'});
 var docClient = new AWS.DynamoDB.DocumentClient();
 
-router.get("/testdynamo", function(req, res, next) {
+router.get("/", function(req, res, next) {
     var params = {
         TableName: tableName
     };

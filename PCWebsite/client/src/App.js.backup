@@ -18,7 +18,9 @@ const App = () => {
   const [pc, setPc] = useState([]);
 
   useEffect(() => {
-    fetch("https://pplcnt-web.e-motion.ai/api/testdynamo")
+    fetch("https://pplcnt-web.e-motion.ai/api", {
+      mode: 'cors'
+    })
       .then(response => response.json())
       .then(data => {
         console.log(data);
